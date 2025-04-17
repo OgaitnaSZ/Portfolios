@@ -1,0 +1,111 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fa;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Poppins", sans-serif;
+}
+
+.hero {
+  background: linear-gradient(to bottom, #110648, #6659a6);
+}
+
+.tech-line {
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  margin: 10px 0;
+}
+
+.lead {
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+.sobre-mi h2 {
+  font-weight: 700;
+}
+
+.badge {
+  font-size: 1rem;
+  padding: 10px 15px;
+}
+
+
+/* Proyectos */
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.card {
+  border: none;
+  transition: transform 0.2s ease-in-out;
+  user-select: none;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+#btn-projetcs {
+  position: relative;
+  transition: text-decoration 0.3s ease;
+  user-select: none;
+}
+
+#btn-projetcs:hover{
+  text-underline-offset: 4px;
+  text-decoration: underline #110648 !important;
+}
+
+#btn-projetcs i {
+  transition: transform 0.3s ease;
+}
+
+#btn-projetcs:hover i {
+  transform: translateX(5px);
+}
+
+#btn-home {
+  position: relative;
+  transition: text-decoration 0.3s ease;
+  user-select: none;
+}
+
+#btn-home i {
+  transition: transform 0.3s ease;
+  line-height: 0;
+}
+
+#btn-home:hover i {
+  transform: translateX(-5px);
+}
+
+
+/* Habilidades Tecnicas */
+.habilidades ul {
+  padding-left: 1rem;
+  line-height: 1.8;
+}
+
+.habilidades h5 {
+  margin-bottom: 1rem;
+}
+
+/* Custom Bootstrap */
+.bg-primary{
+  background-color: #110648 !important;
+  opacity: 0.8;
+}
+.text-primary{
+  color: #110648 !important;
+}
+
+
+/* PROYECTOS */
+table{ background: transparent !important;}
+.row{margin-left: 0 !important; margin-right: 0 !important;}
