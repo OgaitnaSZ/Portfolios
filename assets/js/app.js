@@ -46,3 +46,13 @@ particlesJS("particles-js", {
   },
   retina_detect: true,
 });
+
+// Esperar a que el DOM esté cargado
+document.addEventListener("DOMContentLoaded", function () {
+  const canvas = document.querySelector("canvas");
+  if (canvas) {
+    canvas.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+    });
+  }
+});
