@@ -5,7 +5,6 @@ import { Component } from '@angular/core';
   selector: 'app-header',
   imports: [NgClass],
   templateUrl: './header.html',
-  styleUrl: './header.css',
 })
 export class Header {
   isDark: boolean = false;
