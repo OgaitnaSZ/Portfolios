@@ -1,6 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { Language } from '../../core/services/language';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,5 +8,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './footer.html'
 })
 export class Footer {
-  languageService = inject(Language);
 }

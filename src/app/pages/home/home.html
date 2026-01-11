@@ -1,11 +1,19 @@
 <main class="bg-grid-gradient transition-colors">
   <div class="min-h-dvh container mx-auto px-4 py-4 flex justify-between items-center">
         <section class="w-1/2 flex flex-col gap-10">
-            <h1 class="text-6xl font-extrabold dark:text-gray-50"><span class="text-blue-600">Welcome</span> to my<br>Portfolio Website</h1>
-            <p class="dark:text-gray-50">Hello, I'm Santiago Zelaya. Full-stack Developer. This is my portfolio site here i am presenting my projects and services. Let's Explore.</p>
+            <p class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold bg-gray-100 dark:bg-slate-900 border border-gray-200 dark:border-gray-600 text-gray-800 dark:text-gray-200 w-fit">
+                <span aria-hidden="true" class="inline-block size-1.5 rounded-full bg-green-500"></span>
+                {{'home.availableForHire' | translate}}
+            </p>
+            <h1 class="text-6xl font-extrabold dark:text-gray-50">
+                <span class="text-blue-600">{{'home.welcome' | translate}}</span>
+                {{'home.title' | translate}}
+                <span class="inline-block w-0.5 h-15 bg-current align-middle animate-[blink_1s_steps(1)_infinite]"></span>
+            </h1>
+            <p class="dark:text-gray-50">{{'home.subtitle' | translate}}</p>
             <a href="#" class="w-fit flex bg-blue-600 text-white  px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
                 <span class="material-symbols-outlined">download</span>
-                Download CV
+                {{'home.downloadCV' | translate}}
             </a>
         </section>
         <figure class="w-1/2 flex justify-center">
@@ -13,12 +21,71 @@
         </figure>
     </div>
 </main>
-<section class="container mx-auto px-4 py-4 text-center">
-    <h2 class="text-3xl font-bold uppercase dark:text-gray-50">About Me</h2>
-    <p class="mt-4 dark:text-gray-50">
-        Soy un <strong>desarrollador web full stack</strong> con 4 años de experiencia en el desarrollo de aplicaciones modernas, funcionales, intuitivas y escalables. 
-        <br>Tengo experiencia sólida tanto en frontend como en backend, integrando bases de datos, APIs y desarrollando interfaces atractivas para el usuario. 
-        <br>Me especializo en tecnologías como <strong>Angular, Firebase, PHP, MySQL, C# con ASP.NET Core</strong>, y también trabajé con CMS's como <strong>Wordpress y Shopify</strong>.
-        <br>Me apasiona crear herramientas útiles tanto para empresas como para usuarios finales.
-    </p>
+<section class="container mx-auto my-10 px-4 py-4 text-center">
+    <h2 class="mb-10 text-3xl font-bold uppercase dark:text-gray-50">{{'about.title' | translate}}</h2>
+    <p [innerHTML]="'about.description' | translate" class="mt-4 dark:text-gray-50"></p>
+</section>
+<section class="container mx-auto my-10 px-4 py-4 text-center">
+    <h2 class="mb-10 text-3xl font-bold uppercase dark:text-gray-50">{{'home.projectsFeatured' | translate}}</h2>
+
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        @for(project of projects() ; track $index){
+            <article class="w-full max-w-sm cursor-pointer">
+                <div
+                    class="group relative overflow-hidden rounded-xl bg-background-100
+                        transition hover:shadow-xl hover:ring-2 hover:ring-blue-500/40"
+                >
+                    <!-- Imagen -->
+                    <img
+                    [src]="project.image"
+                    class="h-56 w-full object-cover transition-transform duration-500
+                            group-hover:scale-105 group-hover:backdrop-blur-2xl"
+                    />
+    
+                    <!-- Overlay: gradient + texto + blur -->
+                    <div
+                        class="pointer-events-none absolute inset-0 flex flex-col justify-end p-4
+                            bg-gradient-to-t from-black/60 via-black/20 to-transparent
+                            transition-all duration-300
+                            group-hover:backdrop-blur-xs"
+                    >
+                        <p class="text-white font-medium text-start">
+                        {{project.title}}
+                        </p>
+                    </div>
+    
+                    <!-- Badge -->
+                    <span
+                    class="absolute top-3 right-3 z-10 rounded-full bg-white/90
+                            px-2.5 py-1 text-[10px] font-semibold uppercase text-gray-800"
+                    >
+                    {{ project.category }}
+                    </span>
+    
+                    <!-- Botón Ver Demo -->
+                    <div
+                    class="pointer-events-none absolute inset-0 flex items-center justify-center"
+                    >
+                        <span
+                            class="translate-y-3 rounded-lg bg-blue-600 px-3 py-1.5
+                                text-xs font-semibold text-white shadow-md opacity-0
+                                transition-all duration-300
+                                group-hover:translate-y-0 group-hover:opacity-100"
+                        >
+                            Ver demo
+                        </span>
+                    </div>
+                </div>
+    
+                <p class="text-start mt-1 text-xs text-gray-500">
+                    {{ project.note }}
+                </p>
+            </article>
+        }
+
+    </section>
+    <a routerLink="/projects" class="cursor-pointer inline-block mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+        {{'home.viewProjects' | translate}}
+    </a>
 </section>

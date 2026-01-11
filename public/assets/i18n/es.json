@@ -8,21 +8,70 @@
   "footer": {
     "contact": "Contacto",
     "fastLinks": "Enlaces Rápidos",
-    "info": "Este portafolio fue construido usando Angular y Tailwind CSS."
+    "info": "Este portafolio fue construido usando Angular y Tailwind CSS.",
+    "lastUpdate": "Última actualización: Enero 2025"
+  },
+  "home":{
+    "availableForHire": "Estoy disponible",
+    "welcome": "Bienvenido",
+    "title": " a mi Sitio Web de Portafolio",
+    "subtitle": "Hola, soy Santiago Zelaya. Desarrollador Full-stack. Este es mi sitio web de portafolio donde presento mis proyectos y servicios. Explorémoslo.",
+    "downloadCV": "Descargar CV",
+    "projectsFeatured": "Proyectos Destacados",
+    "viewProjects": "Ver Todo"
   },
   "about": {
-    "title": "Sobre mí",
-    "description": "Desarrollador apasionado por crear experiencias web increíbles"
-  },
-  "projects": {
-    "title": "Mis Proyectos"
+    "title": "Sobre Mí",
+    "description": "Soy un <strong>desarrollador web full stack</strong> con 4 años de experiencia en el desarrollo de aplicaciones modernas, funcionales, intuitivas y escalables.<br>Tengo experiencia sólida tanto en frontend como en backend, integrando bases de datos, APIs y desarrollando interfaces atractivas para el usuario.<br>Me especializo en tecnologías como <strong>Angular, Firebase, PHP, MySQL, C# con ASP.NET Core</strong>, y también trabajé con CMS's como <strong>Wordpress y Shopify</strong>.<br>Me apasiona crear herramientas útiles tanto para empresas como para usuarios finales."
   },
   "projectsList": [
     {
-      "id": "1",
-      "title": "E-commerce",
-      "description": "Plataforma de comercio electrónico completa",
-      "technologies": ["Angular", "TypeScript", "RxJS"]
+      "title": "Plataforma de Reservas de Alojamientos",
+      "description": "<p>Desarrollé una aplicación web similar a Booking, utilizando Angular para el frontend, y PHP + MySQL para el backend, orientada a facilitar la búsqueda, publicación y reserva de alojamientos y experiencias turísticas en múltiples ciudades.</p><p>Entre sus principales funcionalidades se encuentran:</p><ul><li>Publicación y gestión de alojamientos, con personalización de características por habitación y propiedad.</li><li>Sistema de reservas para habitaciones y actividades.</li><li>Destacados en portada, permitiendo a los anfitriones destacar sus alojamientos.</li><li>Pasarela de pagos integrada con MercadoPago.</li><li>Sistema de autenticación/login para usuarios y anfitriones.</li><li>Historial de reservas y visitas anteriores.</li><li>Sistema de reseñas, disponible una vez finalizada la estadía o actividad.</li></ul><p>La plataforma está pensada para ser intuitiva, segura y escalable, ofreciendo una experiencia fluida tanto para viajeros como para anfitriones.</p>",
+      "technologies": ["Angular", "TypeScript", "NodeJS", "Express", "MySQL"],
+      "category": "App Web",
+      "image": "assets/images/projects/proyecto-booking.png",
+      "note": "Subido el 28 de septiembre de 2025"
+    },
+    {
+      "title": "Aplicación Web de Gestión Médica",
+      "description": "<p>Desarrollé una aplicación web para la gestión integral de pacientes en centros médicos, utilizando Angular para el frontend y PHP + MySQL para el backend, enfocada en optimizar el manejo de historias clínicas, consultas y documentación médica.</p><p>Entre sus principales funcionalidades se encuentran:</p><ul> <li>Gestión completa de pacientes: alta, modificación, eliminación y búsqueda eficiente.</li> <li>Visualización de la historia clínica individual de cada paciente, organizada por consultas.</li> <li>Registro de consultas médicas con fecha, descripción detallada y posibilidad de adjuntar archivos (como análisis clínicos, estudios o informes complementarios).</li> <li>Dashboard centralizado con un resumen general de pacientes, consultas recientes y estadísticas clave.</li> <li>Importación masiva de pacientes mediante la carga de archivos Excel, facilitando la migración de datos o la incorporación de nuevos registros.</li> </ul><p>La plataforma está diseñada para ser ágil, segura y escalable, ofreciendo a los profesionales de la salud una herramienta intuitiva para la administración eficiente de sus pacientes y sus historiales médicos.</p>",
+      "technologies": ["Angular", "TypeScript", "NodeJS", "Express", "MongoDB"],
+      "category": "App Web",
+      "image": "assets/images/projects/sistema-medico.png",
+      "note": "Subido el 28 de septiembre de 2025"
+    },
+    {
+      "title": "KanbanApp – Organización y Gestión de Tareas para Equipos",
+      "description": "<p>Esta es una aplicación web de gestión de tareas tipo Kanban, similar a Trello, desarrollada con ASP.NET Core, utilizando Razor Pages, Bootstrap y Javascript para la interfaz de usuario. La aplicación permite a los usuarios gestionar tableros, tareas y equipos con diferentes niveles de acceso. Cuenta con autenticación de usuarios mediante cookies de sesión y variables de sesión.</p><p>Caracteristicas Principales:</p><ul><li><strong>Autenticación y control de acceso:</strong> Inicio de sesión con roles de usuario.</li><li><strong>Gestión de tableros:</strong> Crear, modificar y listar tableros con tareas asignadas.</li><li><strong>Gestión de tareas:</strong> Flujo de tareas basado en estados: Ideas, ToDo, Doing, Review, Done.</li><li><strong>Gestión de equipo:</strong> Visualización de usuarios y sus actividades.</li><li><strong>Manejo de errores:</strong> Redirección de páginas inexistentes y logging de errores con ILogger.</li></ul>",
+      "technologies": ["C#", "ASP.NET Core", "SQLite", "Entity Framework", "Razor Pages"],
+      "category": "App Web",
+      "image": "assets/images/projects/kanban-app.png",
+      "note": "Subido el 28 de septiembre de 2025"
+    },
+    {
+      "title": "Gestor de Clientes para Aseguradora",
+      "description": "<p>Desarrollé una aplicación web completa utilizando Angular para el frontend y Firebase como backend, orientada a optimizar la gestión de clientes en una aseguradora.</p><p>La aplicación permite registrar, editar y eliminar clientes, así como gestionar ventas asociadas a cada uno. Incorpora un sistema integral de administración de cuotas, que facilita el seguimiento detallado de pagos: cuotas pagadas, pendientes y vencidas, todo en una interfaz intuitiva y segura.</p><p>Esta herramienta mejora significativamente la organización interna y el control financiero de la aseguradora, ofreciendo una solución escalable y en tiempo real.</p>",
+      "technologies": ["Angular", "Firebase"],
+      "category": "App Web",
+      "image": "assets/images/projects/proyecto-gestion-de-clientes.png",
+      "note": "Subido el 28 de septiembre de 2025"
+    },
+    {
+      "title": "Ecommerce Personalizado para Tienda de Ropa Infantil",
+      "description": "<p>Desarrollé una tienda online personalizada para una marca de ropa infantil, adaptando el diseño y funcionalidades a medida. La plataforma ofrece una experiencia de compra atractiva y sencilla, pensada para padres y enfocada en destacar los productos de forma clara y visual.</p>",
+      "technologies": ["Shopify", "JavaScript", "Liquid", "ShopifySQL"],
+      "category": "Ecommerce",
+      "image": "assets/images/projects/proyecto-ecommerce.png",
+      "note": "Subido el 28 de septiembre de 2025"
+    },
+    {
+      "title": "Landing page para Portal Inmobiliario",
+      "description": "<p>Desarrollé una landing page de alta conversión personalizada para un portal inmobiliario, adaptando el diseño y funcionalidades a medida. La página ofrece una experiencia de usuario atractiva y sencilla, enfocada en destacar servicios de forma clara y visual.</p>",
+      "technologies": ["HTML", "Css", "JavaScript", "Tailwind CSS", "Google App Script"],
+      "category": "Landing Page",
+      "image": "assets/images/projects/landing_page_jhely.png",
+      "note": "Subido el 28 de septiembre de 2025"
     }
   ]
 }

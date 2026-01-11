@@ -8,21 +8,73 @@
   "footer": {
     "contact": "Contact",
     "fastLinks": "Fast links",
-    "info": "This portfolio was built using Angular and Tailwind CSS."
+    "info": "This portfolio was built using Angular and Tailwind CSS.",
+    "lastUpdate": "Last update: January 2025"
+  },
+  "home":{
+    "availableForHire": "I'm available",
+    "welcome": "Welcome",
+    "title": " to my Portfolio Website",
+    "subtitle": "Hello, I'm Santiago Zelaya. Full-stack Developer. This is my portfolio site here i am presenting my projects and services. Let's Explore.",
+    "downloadCV": "Download CV",
+    "projectsFeatured": "Featured Projects",
+    "viewProjects": "View All"
   },
   "about": {
-    "title": "About me",
-    "description": "Developer passionate about creating amazing web experiences"
+    "title": "About Me",
+    "description": "I am a <strong>full stack web developer</strong> with 4 years of experience in developing modern, functional, intuitive, and scalable applications.<br>I have solid experience in both frontend and backend, integrating databases, APIs, and developing attractive user interfaces.<br>I specialize in technologies such as <strong>Angular, Firebase, PHP, MySQL, C# with ASP.NET Core</strong>, and have also worked with CMS's like <strong>Wordpress and Shopify</strong>.<br>I am passionate about creating useful tools for both businesses and end users."
   },
   "projects": {
     "title": "My Projects"
   },
   "projectsList": [
     {
-      "id": "1",
-      "title": "E-commerce",
-      "description": "Complete e-commerce platform",
-      "technologies": ["Angular", "TypeScript", "RxJS"]
+      "title": "Accommodation Booking Platform",
+      "description": "<p>I developed a web application similar to Booking, using Angular for the frontend, and PHP + MySQL for the backend, aimed at facilitating the search, publication, and booking of accommodations and tourist experiences in multiple cities.</p><p>Its main features include:</p><ul><li>Publication and management of accommodations, with customization of features by room and property.</li><li>Booking system for rooms and activities.</li><li>Featured listings on the homepage, allowing hosts to highlight their accommodations.</li><li>Payment gateway integrated with MercadoPago.</li><li>Authentication/login system for users and hosts.</li><li>History of previous bookings and visits.</li><li>Review system, available once the stay or activity is completed.</li></ul><p>The platform is designed to be intuitive, secure, and scalable, offering a smooth experience for both travelers and hosts.</p>",
+      "technologies": ["Angular", "TypeScript", "NodeJS", "Express", "MySQL"],
+      "category": "App Web",
+      "image": "assets/images/projects/proyecto-booking.png",
+      "note": "Uploaded on September 28, 2025" 
+    },
+    {
+      "title": "Medical Management Web Application",
+      "description": "<p>I developed a web application for the comprehensive management of patients in medical centers, using Angular for the frontend and PHP + MySQL for the backend, focused on optimizing the handling of medical records, consultations, and documentation.</p><p>Its main features include:</p><ul> <li>Complete patient management: registration, modification, deletion, and efficient search.</li> <li>Visualization of individual medical records for each patient, organized by consultations.</li> <li>Recording of medical consultations with date, detailed description, and the ability to attach files (such as clinical analyses, studies, or complementary reports).</li> <li>Centralized dashboard with a general summary of patients, recent consultations, and key statistics.</li> <li>Mass import of patients through Excel file uploads, facilitating data migration or the incorporation of new records.</li> </ul><p>The platform is designed to be agile, secure, and scalable, offering healthcare professionals an intuitive tool for the efficient administration of their patients and medical histories.</p>",
+      "technologies": ["Angular", "TypeScript", "NodeJS", "Express", "MongoDB"],
+      "category": "App Web",
+      "image": "assets/images/projects/sistema-medico.png",
+      "note": "Uploaded on September 28, 2025" 
+    },
+    {
+      "title": "KanbanApp – Task Organization and Management for Teams",
+      "description": "<p>This is a Kanban-style task management web application, similar to Trello, developed with ASP.NET Core, using Razor Pages, Bootstrap, and Javascript for the user interface. The application allows users to manage boards, tasks, and teams with different access levels. It features user authentication through session cookies and session variables.</p><p>Main Features:</p><ul><li><strong>Authentication and access control:</strong> Login with user roles.</li><li><strong>Board management:</strong> Create, modify, and list boards with assigned tasks.</li><li><strong>Task management:</strong> Task flow based on states: Ideas, ToDo, Doing, Review, Done.</li><li><strong>Team management:</strong> Visualization of users and their activities.</li><li><strong>Error handling:</strong> Redirection of non-existent pages and error logging with ILogger.</li></ul>",
+      "technologies": ["C#", "ASP.NET Core", "SQLite", "Entity Framework", "Razor Pages"],
+      "category": "App Web",
+      "image": "assets/images/projects/kanban-app.png",
+      "note": "Uploaded on September 28, 2025" 
+    },
+    {
+      "title": "Client Manager for Insurance Company",
+      "description": "<p>I developed a complete web application using Angular for the frontend and Firebase as the backend, aimed at optimizing client management in an insurance company.</p><p>The application allows registering, editing, and deleting clients, as well as managing sales associated with each one. It incorporates a comprehensive quota management system that facilitates detailed tracking of payments: paid, pending, and overdue quotas, all in an intuitive and secure interface.</p><p>This tool significantly improves the internal organization and financial control of the insurance company, offering a scalable and real-time solution.</p>",
+      "technologies": ["Angular", "Firebase"],
+      "category": "App Web",
+      "image": "assets/images/projects/proyecto-gestion-de-clientes.png",
+      "note": "Uploaded on September 28, 2025" 
+    },
+    {
+      "title": "Custom Ecommerce for Children's Clothing Store",
+      "description": "<p>I developed a personalized online store for a children's clothing brand, tailoring the design and functionalities to measure. The platform offers an attractive and simple shopping experience, designed for parents and focused on clearly and visually highlighting the products.</p>",
+      "technologies": ["Shopify", "JavaScript", "Liquid", "ShopifySQL"],
+      "category": "Ecommerce",
+      "image": "assets/images/projects/proyecto-ecommerce.png",
+      "note": "Uploaded on September 28, 2025"
+    },
+    {
+      "title": "Landing Page for Real Estate Portal",
+      "description": "<p>I developed a high-conversion landing page customized for a real estate portal, tailoring the design and functionalities to measure. The page offers an attractive and simple user experience, focused on clearly and visually highlighting services.</p>",
+      "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      "category": "Landing Page",
+      "image": "assets/images/projects/landing-page-real-estate.png",
+      "note": "Uploaded on September 28, 2025"
     }
   ]
 }
