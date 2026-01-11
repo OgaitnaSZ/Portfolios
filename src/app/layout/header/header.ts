@@ -17,7 +17,17 @@ export class Header {
 
   ngOnInit(): void {
     // Cargar modo oscuro
-    this.isDark.set(localStorage.getItem('theme') === 'dark');
+    const savedTheme = localStorage.getItem('theme');
+    const isDarkMode = savedTheme === 'dark';
+    
+    this.isDark.set(isDarkMode);
+    
+    const html = document.documentElement;
+    if (isDarkMode) {
+      html.classList.add('dark');
+    } else {
+      html.classList.remove('dark');
+    }
   }
 
   toggleTheme() {
