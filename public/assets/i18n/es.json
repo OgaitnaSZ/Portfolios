@@ -18,7 +18,14 @@
     "subtitle": "Hola, soy Santiago Zelaya. Desarrollador Full-stack. Este es mi sitio web de portafolio donde presento mis proyectos y servicios. Explorémoslo.",
     "downloadCV": "Descargar CV",
     "projectsFeatured": "Proyectos Destacados",
-    "viewProjects": "Ver Todo"
+    "viewProjects": "Ver Todo",
+    "skills": {
+      "title": "Habilidades Técnicas",
+      "languages": "Lenguajes de Programación",
+      "frameworks": "Frameworks y Librerías",
+      "databases": "Bases de Datos",
+      "tools": "Herramientas y Plataformas"
+    }
   },
   "about": {
     "title": "Sobre Mí",

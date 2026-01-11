@@ -21,10 +21,12 @@
         </figure>
     </div>
 </main>
+
 <section class="container mx-auto my-10 px-4 py-4 text-center">
     <h2 class="mb-10 text-3xl font-bold uppercase dark:text-gray-50">{{'about.title' | translate}}</h2>
     <p [innerHTML]="'about.description' | translate" class="mt-4 dark:text-gray-50"></p>
 </section>
+
 <section class="container mx-auto my-10 px-4 py-4 text-center">
     <h2 class="mb-10 text-3xl font-bold uppercase dark:text-gray-50">{{'home.projectsFeatured' | translate}}</h2>
 
@@ -46,7 +48,7 @@
                     <!-- Overlay: gradient + texto + blur -->
                     <div
                         class="pointer-events-none absolute inset-0 flex flex-col justify-end p-4
-                            bg-gradient-to-t from-black/60 via-black/20 to-transparent
+                            bg-linear-to-t from-black/60 via-black/20 to-transparent
                             transition-all duration-300
                             group-hover:backdrop-blur-xs"
                     >
@@ -55,10 +57,9 @@
                         </p>
                     </div>
     
-                    <!-- Badge -->
                     <span
                     class="absolute top-3 right-3 z-10 rounded-full bg-white/90
-                            px-2.5 py-1 text-[10px] font-semibold uppercase text-gray-800"
+                            px-2.5 py-1 text-[10px] font-semibold uppercase text-gray-800 shadow-md"
                     >
                     {{ project.category }}
                     </span>
@@ -67,14 +68,14 @@
                     <div
                     class="pointer-events-none absolute inset-0 flex items-center justify-center"
                     >
-                        <span
+                        <a  [href]="project.url || '#'"
                             class="translate-y-3 rounded-lg bg-blue-600 px-3 py-1.5
                                 text-xs font-semibold text-white shadow-md opacity-0
                                 transition-all duration-300
                                 group-hover:translate-y-0 group-hover:opacity-100"
                         >
                             Ver demo
-                        </span>
+                        </a>
                     </div>
                 </div>
     
@@ -85,7 +86,60 @@
         }
 
     </section>
-    <a routerLink="/projects" class="cursor-pointer inline-block mt-4 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+    <a routerLink="/projects" class="cursor-pointer inline-block mt-10 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
         {{'home.viewProjects' | translate}}
     </a>
+</section>
+
+<section class="container mx-auto my-10 px-4 py-4 text-center">
+    <h2 class="mb-10 text-3xl font-bold uppercase dark:text-gray-50">{{'home.skills.title' | translate}}</h2>
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article>
+            <h3 class="text-xl font-semibold mb-4 dark:text-gray-50">{{'home.skills.languages' | translate}}</h3>
+            <ul class="text-gray-500 dark:text-gray-400">
+                <li class="">HTML5 / CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>TypeScript</li>
+                <li>PHP</li>
+                <li>C# / C</li>
+                <li>Python</li>
+                
+            </ul>
+        </article>
+        <article>
+            <h3 class="text-xl font-semibold mb-4 dark:text-gray-50">{{'home.skills.frameworks' | translate}}</h3>
+            <ul class="text-gray-500 dark:text-gray-400">
+                <li>Angular</li>
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>ASP.NET Core</li>
+                <li>Tailwind CSS</li>
+                <li>Bootstrap</li>
+            </ul>
+        </article>
+        <article>
+            <h3 class="text-xl font-semibold mb-4 dark:text-gray-50">{{'home.skills.databases' | translate}}</h3>
+            <ul class="text-gray-500 dark:text-gray-400">
+                <li>MySQL</li>
+                <li>MongoDB</li>
+                <li>SQLite</li>
+                <li>SQL Server</li>
+                <li>Firebase</li>
+            </ul>
+        </article>
+        <article>
+            <h3 class="text-xl font-semibold mb-4 dark:text-gray-50">{{'home.skills.tools' | translate}}</h3>
+            <ul class="text-gray-500 dark:text-gray-400">
+                <li>Firebase</li>
+                <li>Git / Github</li>
+                <li>CD / CD</li>
+                <li>Wordpress / Shopify</li>
+                <li>Docker</li>
+                <li>Jira / Trello</li>
+                <li>Postman</li>
+                <li>Figma</li>
+                <li>Slack</li>
+            </ul>
+        </article>
+    </section>
 </section>

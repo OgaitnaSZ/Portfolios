@@ -18,7 +18,14 @@
     "subtitle": "Hello, I'm Santiago Zelaya. Full-stack Developer. This is my portfolio site here i am presenting my projects and services. Let's Explore.",
     "downloadCV": "Download CV",
     "projectsFeatured": "Featured Projects",
-    "viewProjects": "View All"
+    "viewProjects": "View All",
+      "skills": {
+      "title": "Skills",
+      "languages": "Programming Languages",
+      "frameworks": "Frameworks and Libraries",
+      "databases": "Databases",
+      "tools": "Tools and Platforms"
+    }
   },
   "about": {
     "title": "About Me",
