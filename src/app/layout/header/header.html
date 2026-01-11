@@ -2,8 +2,8 @@
   class="fixed top-0 w-full z-50
          backdrop-blur-md
          border-b border-black/5 dark:border-white/10"
+    [ngClass]="isScrolled() ? 'bg-gray-100 shadow-xs dark:bg-slate-950' : 'bg-transparent'"
 >
-
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <div class="text-2xl font-bold text-gray-800 dark:text-white">
         Santiago Z.
@@ -11,14 +11,14 @@
         <nav class="flex gap-4 items-center">
             <ul 
                 class="flex space-x-4 p-2 rounded-xl"
-                [ngStyle]="isDark ? {
+                [ngStyle]="isDark() ? {
                     'box-shadow': 'inset 2px 2px 8px #1a1a1a'
                 } : {'box-shadow': 'inset 2px 2px 8px #bebebe'}"
             >
-                    <li><a href="/" class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.home' | translate }}</a></li>
-                    <li><a href="/about" class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.about' | translate }}</a></li>
-                    <li><a href="/projects" class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.projects' | translate }}</a></li>
-                    <li><a href="/contact" class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.contact' | translate }}</a></li>
+                    <li><a routerLink="/" class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.home' | translate }}</a></li>
+                    <li><a routerLink="/about" class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.about' | translate }}</a></li>
+                    <li><a routerLink="/projects" class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.projects' | translate }}</a></li>
+                    <li><a routerLink="/contact" class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.contact' | translate }}</a></li>
             </ul>
             <select 
                 class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-2 rounded-lg"
@@ -31,13 +31,13 @@
                 id="theme-toggle"
                 type="button"
                 (click)="toggleTheme()"
-                [attr.aria-label]="isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
+                [attr.aria-label]="isDark() ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
                 [ngClass]="{
                 'flex items-center justify-start w-18 h-9 rounded-full p-1 transition-colors duration-300 focus:outline-none bg-white': true,
-                'bg-white': !isDark,
-                'bg-gray-800': isDark
+                'bg-white': !isDark(),
+                'bg-gray-800': isDark()
                 }"
-                [ngStyle]="isDark ? {
+                [ngStyle]="isDark() ? {
                     'box-shadow': 'inset 2px 2px 8px #1a1a1a'
                 } : {'box-shadow': 'inset 2px 2px 8px #bebebe'}"
             >
@@ -45,16 +45,16 @@
                 <div
                 class="flex items-center justify-center w-6 h-6 rounded-full transition-transform duration-300 bg-white"
                 [ngClass]="{
-                    'translate-x-0 bg-gray-300 shadow-[2px_2px_3px_#bebebe,-2px_-2px_3px_#ffffff]': !isDark,
-                    'translate-x-10 bg-gray-800 shadow-[2px_2px_4px_#2a2a2a,-2px_-2px_4px_#4a4a4a]': isDark
+                    'translate-x-0 bg-gray-300 shadow-[2px_2px_3px_#bebebe,-2px_-2px_3px_#ffffff]': !isDark(),
+                    'translate-x-10 bg-gray-800 shadow-[2px_2px_4px_#2a2a2a,-2px_-2px_4px_#4a4a4a]': isDark()
                 }"
                 >
     
                 <!-- Icono de sol/luna -->
-                 @if(!isDark){
+                 @if(!isDark()){
                     <span class="material-symbols-outlined text-yellow-500 switch">light_mode</span>
                  }
-                 @if(isDark){
+                 @if(isDark()){
                     <span class="material-symbols-outlined text-blue-300 switch">dark_mode</span>
                  }
                 </div>

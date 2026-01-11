@@ -11,6 +11,7 @@ import { RouterLink } from "@angular/router";
 })
 export class Home {
   projects = signal<any[]>([]);
+  cv_url = '';
 
   constructor(
     private translate: TranslateService

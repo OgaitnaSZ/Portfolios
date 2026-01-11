@@ -11,7 +11,7 @@
                 <span class="inline-block w-0.5 h-15 bg-current align-middle animate-[blink_1s_steps(1)_infinite]"></span>
             </h1>
             <p class="dark:text-gray-50">{{'home.subtitle' | translate}}</p>
-            <a href="#" class="w-fit flex bg-blue-600 text-white  px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+            <a [href]="cv_url || '#'" class="w-fit flex bg-blue-600 text-white  px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
                 <span class="material-symbols-outlined">download</span>
                 {{'home.downloadCV' | translate}}
             </a>

@@ -1,27 +1,29 @@
 import { NgClass } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { Language } from '../../core/services/language';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-header',
-  imports: [NgClass, CommonModule, TranslateModule],
+  imports: [NgClass, CommonModule, TranslateModule, RouterLink],
   templateUrl: './header.html',
 })
 export class Header {
   languageService = inject(Language);
-  isDark: boolean = false;
+  isDark = signal(false);
+  isScrolled = signal(false);
 
   ngOnInit(): void {
     // Cargar modo oscuro
-    this.isDark = localStorage.getItem('theme') === 'dark';
+    this.isDark.set(localStorage.getItem('theme') === 'dark');
   }
 
   toggleTheme() {
-    this.isDark = !this.isDark;
+    this.isDark.set(!this.isDark());
     const html = document.documentElement;
-    if (this.isDark) {
+    if (this.isDark()) {
       html.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     } else {
@@ -33,5 +35,10 @@ export class Header {
   onLanguageChange(event: Event) {
     const target = event.target as HTMLSelectElement;
     this.languageService.setLanguage(target.value);
+  }
+
+  @HostListener('window:scroll')
+  onScroll() {
+    this.isScrolled.set(window.scrollY > 0);
   }
 }

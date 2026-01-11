@@ -1,37 +1,108 @@
-<footer class="container mx-auto px-4 py-4 bottom-0 w-full">
-    <section class="flex justify-between">
-        <p class="text-2xl font-bold text-gray-800 dark:text-white w-1/4">
-            Santiago Zelaya
-        </p>
-        <div class="flex gap-5">
-            <div class="w-1/3">
-                <h2 class="text-xl font-bold mb-4">{{ 'footer.contact' | translate }}</h2>
-                <p>Email: <a href="mailto:santiago991007@gmail.com">santiago991007@gmail.com</a></p>
-                <p>Linkedin: <a href="https://www.linkedin.com/in/santiago-zelaya/" target="_blank" rel="noopener noreferrer">Santiago-Zelaya</a></p>
-                <p>GitHub: <a href="https://github.com/OgaitnaSZ" target="_blank" rel="noopener noreferrer">OgaitnaSZ</a>
+<div class="h-0.5 w-full bg-linear-to-r from-purple-400 via-cyan-500 to-blue-500"></div>
+<footer class="bg-grid-gradient transition-colors relative overflow-hidden dark:border-gray-800">
+    <div class="container mx-auto px-4 py-16 relative z-10">
+        <section class="flex flex-col md:flex-row justify-between gap-8 md:gap-0">
+            <!-- Marca personal -->
+            <div class="w-full md:w-1/4">
+                <p class="text-2xl font-bold text-gray-800 dark:text-white">
+                    Santiago Zelaya
+                </p>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                    {{ 'footer.role' | translate }}
+                </p>
             </div>
-            <div class="w-1/3">
-                <h2 class="text-xl font-bold mb-4">{{ 'footer.fastLinks' | translate }}</h2>
-                <ul>
-                    <li><a href="/about">{{ 'nav.about' | translate }}</a></li>
-                    <li><a href="/projects">{{ 'nav.projects' | translate }}</a></li>
-                    <li><a href="/contact">{{ 'nav.contact' | translate }}</a></li>
-                </ul>
-            </div>
-            <div class="w-1/3">
-                <h2 class="text-xl font-bold mb-4">Info</h2>
-                <p>{{ 'footer.info' | translate }}</p>
-            </div>
-        </div>
-    </section>
-    <section class="w-full mt-12 flex justify-between border-t border-gray-200 pt-6">
-        <p class="text-sm">© 2024 Santiago's Portfolio. All rights reserved.</p>
 
-        <div class="flex items-center gap-3 text-xs text-text-600">
-            <span class="inline-flex items-center gap-2">
-                <span aria-hidden="true" class="size-1.5 rounded-full bg-green-500"></span>
-                <p>{{ 'footer.lastUpdate' | translate }}</p>
-            </span>
-        </div>
-    </section>
+            <!-- Columnas de información -->
+            <div class="flex flex-col md:flex-row gap-8 md:gap-5 w-full md:w-3/4">
+                <!-- Contacto -->
+                <div class="w-full md:w-1/3">
+                    <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-gray-50">
+                        {{ 'footer.contact' | translate }}
+                    </h2>
+                    <div class="space-y-2 text-sm">
+                        <p class="text-gray-600 dark:text-gray-400">
+                            <span class="font-medium">Email:</span>
+                            <a href="mailto:santiago991007@gmail.com" 
+                               class="block md:inline ml-0 md:ml-1 text-blue-600 dark:text-blue-400 hover:underline transition-colors">
+                                santiago991007@gmail.com
+                            </a>
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            <span class="font-medium">LinkedIn:</span>
+                            <a href="https://www.linkedin.com/in/santiago-zelaya/" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="block md:inline ml-0 md:ml-1 text-blue-600 dark:text-blue-400 hover:underline transition-colors">
+                                Santiago-Zelaya
+                            </a>
+                        </p>
+                        <p class="text-gray-600 dark:text-gray-400">
+                            <span class="font-medium">GitHub:</span>
+                            <a href="https://github.com/OgaitnaSZ" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="block md:inline ml-0 md:ml-1 text-blue-600 dark:text-blue-400 hover:underline transition-colors">
+                                OgaitnaSZ
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div class="w-full md:w-1/3">
+                    <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-gray-50">
+                        {{ 'footer.fastLinks' | translate }}
+                    </h2>
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a routerLink="/about" 
+                               class="cursor-pointer text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                {{ 'nav.about' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="/projects" 
+                               class="cursor-pointer text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                {{ 'nav.projects' | translate }}
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="/contact" 
+                               class="cursor-pointer text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                {{ 'nav.contact' | translate }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Info -->
+                <div class="w-full md:w-1/3">
+                    <h2 class="text-xl font-bold mb-4 text-gray-900 dark:text-gray-50">
+                        Info
+                    </h2>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {{ 'footer.info' | translate }}
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separador y copyright -->
+        <section class="w-full mt-12 pt-6 border-t border-gray-200 dark:border-gray-800">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <!-- Copyright -->
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    © {{ currentYear }} Santiago's Portfolio. All rights reserved.
+                </p>
+
+                <!-- Estado y última actualización -->
+                <div class="flex items-center gap-3 text-xs text-gray-600 dark:text-gray-400">
+                    <span class="inline-flex items-center gap-2 bg-gray-100 dark:bg-slate-900 border border-gray-200 dark:border-gray-600 rounded-full px-3 py-1.5">
+                        <span aria-hidden="true" class="size-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                        <p>{{ 'footer.lastUpdate' | translate }}</p>
+                    </span>
+                </div>
+            </div>
+        </section>
+    </div>
 </footer>
