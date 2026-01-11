@@ -1,0 +1,28 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "contact": "Contacto",
+    "fastLinks": "Enlaces Rápidos",
+    "info": "Este portafolio fue construido usando Angular y Tailwind CSS."
+  },
+  "about": {
+    "title": "Sobre mí",
+    "description": "Desarrollador apasionado por crear experiencias web increíbles"
+  },
+  "projects": {
+    "title": "Mis Proyectos"
+  },
+  "projectsList": [
+    {
+      "id": "1",
+      "title": "E-commerce",
+      "description": "Plataforma de comercio electrónico completa",
+      "technologies": ["Angular", "TypeScript", "RxJS"]
+    }
+  ]
+}

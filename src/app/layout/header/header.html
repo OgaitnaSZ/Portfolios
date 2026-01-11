@@ -5,14 +5,17 @@
         </div>
         <nav>
             <ul class="flex space-x-4">
-                <li><a href="/" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Home</a></li>
-                <li><a href="/about" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">About</a></li>
-                <li><a href="/projects" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Projects</a></li>
+                <li><a href="/" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.home' | translate }}</a></li>
+                <li><a href="/about" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.about' | translate }}</a></li>
+                <li><a href="/projects" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.projects' | translate }}</a></li>
             </ul>
         </nav>
         <div class="flex justify-center items-center space-x-4">
-            <a href="/contact" class="text-gray-50 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">Contact Now</a>
-            <select class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-2 rounded">
+            <a href="/contact" class="text-gray-50 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded">{{ 'nav.contact' | translate }}</a>
+            <select 
+                class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-2 rounded"
+                [value]="languageService.currentLang()"
+                (change)="onLanguageChange($event)">
                 <option value="es">ES</option>
                 <option value="en">EN</option>
             </select>

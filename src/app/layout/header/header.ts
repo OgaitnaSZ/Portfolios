@@ -1,12 +1,16 @@
 import { NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { Language } from '../../core/services/language';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [NgClass],
+  imports: [NgClass, CommonModule, TranslateModule],
   templateUrl: './header.html',
 })
 export class Header {
+  languageService = inject(Language);
   isDark: boolean = false;
 
   ngOnInit(): void {
@@ -24,5 +28,10 @@ export class Header {
       html.classList.remove('dark');
       localStorage.setItem('theme', 'light');
     }
+  }
+
+  onLanguageChange(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    this.languageService.setLanguage(target.value);
   }
 }
