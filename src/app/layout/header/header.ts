@@ -17,6 +17,7 @@ export class Header {
   isDark = signal(false);
   isScrolled = signal(false);
   currentRoute = signal('/');
+  isMenuOpen = signal(false);
 
   scrollSpy = inject(ScrollSpy);
   router = inject(Router);
@@ -115,5 +116,14 @@ export class Header {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  // Responsive menu
+  toggleMenu() {
+    this.isMenuOpen.update((current) => !current);
+  }
+
+  closeMenu() {
+    this.isMenuOpen.set(false);
   }
 }

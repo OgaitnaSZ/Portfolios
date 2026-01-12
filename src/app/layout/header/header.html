@@ -6,9 +6,10 @@
 >
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
         <div class="text-2xl font-bold text-gray-800 dark:text-white">
-        Santiago Z.
+            Santiago Z.
         </div>
-        <nav class="flex gap-4 items-center">
+
+        <nav class="hidden lg:flex gap-4 items-center">
             <ul 
                 class="flex space-x-4 p-2 rounded-xl"
                 [ngStyle]="isDark() ? {
@@ -61,6 +62,8 @@
                     </a>
                 </li>
             </ul>
+            
+            <!-- Language selector -->
             <select 
                 class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-2 rounded-lg"
                 [value]="languageService.currentLang()"
@@ -68,38 +71,133 @@
                 <option value="es">ES</option>
                 <option value="en">EN</option>
             </select>
+
+            <!-- Theme toggle -->
             <button
                 id="theme-toggle"
                 type="button"
                 (click)="toggleTheme()"
                 [attr.aria-label]="isDark() ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'"
                 [ngClass]="{
-                'flex items-center justify-start w-18 h-9 rounded-full p-1 transition-colors duration-300 focus:outline-none bg-white': true,
-                'bg-white': !isDark(),
-                'bg-gray-800': isDark()
+                    'flex items-center justify-start w-18 h-9 rounded-full p-1 transition-colors duration-300 focus:outline-none bg-white': true,
+                    'bg-white': !isDark(),
+                    'bg-gray-800': isDark()
                 }"
                 [ngStyle]="isDark() ? {
                     'box-shadow': 'inset 2px 2px 8px #1a1a1a'
                 } : {'box-shadow': 'inset 2px 2px 8px #bebebe'}"
             >
-            <!-- Circulo deslizante con icono -->
                 <div
-                class="flex items-center justify-center w-6 h-6 rounded-full transition-transform duration-300 bg-white"
-                [ngClass]="{
-                    'translate-x-0 bg-gray-300 shadow-[2px_2px_3px_#bebebe,-2px_-2px_3px_#ffffff]': !isDark(),
-                    'translate-x-10 bg-gray-800 shadow-[2px_2px_4px_#2a2a2a,-2px_-2px_4px_#4a4a4a]': isDark()
-                }"
+                    class="flex items-center justify-center w-6 h-6 rounded-full transition-transform duration-300 bg-white"
+                    [ngClass]="{
+                        'translate-x-0 bg-gray-300 shadow-[2px_2px_3px_#bebebe,-2px_-2px_3px_#ffffff]': !isDark(),
+                        'translate-x-10 bg-gray-800 shadow-[2px_2px_4px_#2a2a2a,-2px_-2px_4px_#4a4a4a]': isDark()
+                    }"
                 >
-    
-                <!-- Icono de sol/luna -->
-                 @if(!isDark()){
-                    <span class="material-symbols-outlined text-yellow-500 switch">light_mode</span>
-                 }
-                 @if(isDark()){
-                    <span class="material-symbols-outlined text-blue-300 switch">dark_mode</span>
-                 }
+                    @if(!isDark()){
+                        <span class="material-symbols-outlined text-yellow-500 switch">light_mode</span>
+                    }
+                    @if(isDark()){
+                        <span class="material-symbols-outlined text-blue-300 switch">dark_mode</span>
+                    }
                 </div>
             </button>
+        </nav>
+
+        <!-- Mobile controls (Theme + Language + Hamburger) -->
+        <div class="flex lg:hidden items-center gap-3">
+            <select 
+                class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-2 rounded-lg text-sm"
+                [value]="languageService.currentLang()"
+                (change)="onLanguageChange($event)">
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+            </select>
+
+            <button
+                type="button"
+                (click)="toggleTheme()"
+                class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700"
+            >
+                @if(!isDark()){
+                    <span class="material-symbols-outlined text-yellow-500">light_mode</span>
+                }
+                @if(isDark()){
+                    <span class="material-symbols-outlined text-blue-300">dark_mode</span>
+                }
+            </button>
+
+            <button
+                type="button"
+                (click)="toggleMenu()"
+                class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+                [attr.aria-label]="isMenuOpen() ? 'Cerrar menú' : 'Abrir menú'"
+            >
+                @if(!isMenuOpen()){
+                    <span class="material-symbols-outlined">menu</span>
+                }
+                @if(isMenuOpen()){
+                    <span class="material-symbols-outlined">close</span>
+                }
+            </button>
+        </div>
+    </div>
+
+    <div 
+        class="lg:hidden overflow-hidden transition-all duration-300 ease-in-out"
+        [ngClass]="{
+            'max-h-96 opacity-100': isMenuOpen(),
+            'max-h-0 opacity-0': !isMenuOpen()
+        }"
+    >
+        <nav class="container mx-auto px-4 pb-4">
+            <ul class="flex flex-col space-y-2">
+                <li>
+                    <a 
+                        (click)="scrollToSection('home', $event); closeMenu()"
+                        class="block py-3 px-4 rounded-lg font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors"
+                        [ngClass]="{'bg-linear-to-r from-blue-600 to-purple-600 text-white': isActive('home')}"
+                    >
+                        {{ 'nav.home' | translate }}
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        (click)="scrollToSection('about', $event); closeMenu()"
+                        class="block py-3 px-4 rounded-lg font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors"
+                        [ngClass]="{'bg-linear-to-r from-blue-600 to-purple-600 text-white': isActive('about')}"
+                    >
+                        {{ 'nav.about' | translate }}
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        (click)="scrollToSection('projects', $event); closeMenu()"
+                        class="block py-3 px-4 rounded-lg font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors"
+                        [ngClass]="{'bg-linear-to-r from-blue-600 to-purple-600 text-white': isActive('projects')}"
+                    >
+                        {{ 'nav.projects' | translate }}
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        (click)="scrollToSection('skills', $event); closeMenu()"
+                        class="block py-3 px-4 rounded-lg font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors"
+                        [ngClass]="{'bg-linear-to-r from-blue-600 to-purple-600 text-white': isActive('skills')}"
+                    >
+                        {{ 'nav.skills' | translate }}
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        (click)="scrollToSection('contact', $event); closeMenu()"
+                        class="block py-3 px-4 rounded-lg font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer transition-colors"
+                        [ngClass]="{'bg-linear-to-r from-blue-600 to-purple-600 text-white': isActive('contact')}"
+                    >
+                        {{ 'nav.contact' | translate }}
+                    </a>
+                </li>
+            </ul>
         </nav>
     </div>
 </header>
