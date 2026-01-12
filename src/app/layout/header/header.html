@@ -36,7 +36,7 @@
                 <li>
                     <a 
                         (click)="scrollToSection('projects', $event)"
-                        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative pb-1 transition-colors"
+                        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white cursor-pointer relative pb-1 transition-colors"
                         [ngClass]="{'active-link': isActive('projects')}"
                     >
                         {{ 'nav.projects' | translate }}
@@ -45,7 +45,7 @@
                 <li>
                     <a 
                         (click)="scrollToSection('skills', $event)"
-                        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative pb-1 transition-colors"
+                        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white cursor-pointer relative pb-1 transition-colors"
                         [ngClass]="{'active-link': isActive('skills')}"
                     >
                         {{ 'nav.skills' | translate }}
@@ -54,7 +54,7 @@
                 <li>
                     <a 
                         (click)="scrollToSection('contact', $event)"
-                        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative pb-1 transition-colors"
+                        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white cursor-pointer relative pb-1 transition-colors"
                         [ngClass]="{'active-link': isActive('contact')}"
                     >
                         {{ 'nav.contact' | translate }}

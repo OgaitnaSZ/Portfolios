@@ -14,15 +14,12 @@ export class Home {
   projects = signal<any[]>([]);
   cv_url = '';
 
-  constructor(
-    private translate: TranslateService
-  ) {
-    effect(() => {
-      this.translate
-        .get('projectsList')
-        .subscribe((projects) => {
-          this.projects.set(projects);
-        });
-    });
+  constructor(private translate: TranslateService) {
+    this.translate
+      .stream('projectsList')
+      .subscribe(projects => {
+        this.projects.set(projects);
+      });
   }
+
 }
