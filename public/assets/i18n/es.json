@@ -3,7 +3,8 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "projects": "Proyectos",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "skills": "Habilidades"
   },
   "footer": {
     "contact": "Contacto",
@@ -30,7 +31,31 @@
   },
   "about": {
     "title": "Sobre Mí",
-    "description": "Soy un <strong>desarrollador web full stack</strong> con 4 años de experiencia en el desarrollo de aplicaciones modernas, funcionales, intuitivas y escalables.<br>Tengo experiencia sólida tanto en frontend como en backend, integrando bases de datos, APIs y desarrollando interfaces atractivas para el usuario.<br>Me especializo en tecnologías como <strong>Angular, Firebase, PHP, MySQL, C# con ASP.NET Core</strong>, y también trabajé con CMS's como <strong>Wordpress y Shopify</strong>.<br>Me apasiona crear herramientas útiles tanto para empresas como para usuarios finales."
+    "description": "Soy <strong>desarrollador web full stack</strong> con 4 años de experiencia en el desarrollo de aplicaciones modernas, funcionales, intuitivas y escalables.<br>Tengo experiencia sólida tanto en frontend como en backend, integrando bases de datos, APIs y desarrollando interfaces atractivas para el usuario.<br>Me especializo en tecnologías como <strong>Angular, NodeJS, Express, PHP, C# con ASP.NET Core, MySQL, MongoDB </strong>, y también trabajé con CMS's como <strong>Wordpress y Shopify</strong>.<br>Me apasiona crear herramientas útiles tanto para empresas como para usuarios finales.",
+    "yearsExperience": "Años de experiencia",
+    "projectsCompleted": "Proyectos completados",
+    "technologies": "Tecnologías",
+    "dedication": "Dedicación",
+    "learnMore": "Saber más"
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "¿Querés que trabajemos juntos o tenés una idea en mente? ¡Hablame!",
+    "getInTouch": "Información de contacto",
+    "availability": "Disponibilidad",
+    "availabilityText": "Actualmente disponible para proyectos freelance y oportunidades laborales.",
+    "availableNow": "Disponible ahora",
+    "sendMessage": "Enviar mensaje",
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre completo",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "tu@email.com",
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntame sobre tu proyecto...",
+    "sendButton": "Enviar mensaje",
+    "sending": "Enviando...",
+    "successMessage": "Mensaje enviado correctamente",
+    "errorMessage": "Error al enviar el mensaje"
   },
   "projectsList": [
     {

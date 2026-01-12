@@ -1,7 +1,7 @@
 <header
     class="fixed top-0 w-full z-50
          backdrop-blur-md
-         border-b border-black/5 dark:border-white/10"
+         border-b border-black/5 dark:border-white/10 transition-colors duration-300"
     [ngClass]="isScrolled() ? 'bg-gray-100 shadow-xs dark:bg-slate-950' : 'bg-transparent'"
 >
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -15,10 +15,51 @@
                     'box-shadow': 'inset 2px 2px 8px #1a1a1a'
                 } : {'box-shadow': 'inset 2px 2px 8px #bebebe'}"
             >
-                    <li><a routerLink="/" class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.home' | translate }}</a></li>
-                    <li><a routerLink="/about" class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.about' | translate }}</a></li>
-                    <li><a routerLink="/projects" class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.projects' | translate }}</a></li>
-                    <li><a routerLink="/contact" class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">{{ 'nav.contact' | translate }}</a></li>
+                <li>
+                    <a 
+                        (click)="scrollToSection('home', $event)"
+                        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white cursor-pointer relative pb-1 transition-colors"
+                        [ngClass]="{'active-link': isActive('home')}"
+                    >
+                        {{ 'nav.home' | translate }}
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        (click)="scrollToSection('about', $event)"
+                        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white cursor-pointer relative pb-1 transition-colors"
+                        [ngClass]="{'active-link': isActive('about')}"
+                    >
+                        {{ 'nav.about' | translate }}
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        (click)="scrollToSection('projects', $event)"
+                        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative pb-1 transition-colors"
+                        [ngClass]="{'active-link': isActive('projects')}"
+                    >
+                        {{ 'nav.projects' | translate }}
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        (click)="scrollToSection('skills', $event)"
+                        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative pb-1 transition-colors"
+                        [ngClass]="{'active-link': isActive('skills')}"
+                    >
+                        {{ 'nav.skills' | translate }}
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        (click)="scrollToSection('contact', $event)"
+                        class="font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative pb-1 transition-colors"
+                        [ngClass]="{'active-link': isActive('contact')}"
+                    >
+                        {{ 'nav.contact' | translate }}
+                    </a>
+                </li>
             </ul>
             <select 
                 class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-2 rounded-lg"

@@ -1,0 +1,128 @@
+<section id="about" class="min-h-screen bg-grid-gradient transition-colors py-20">
+  <div class="container mx-auto px-4">
+    <!-- Título -->
+    <div class="text-center mb-16">
+      <h2 class="text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+        {{ 'about.title' | translate }}
+      </h2>
+      <div class="w-20 h-1 bg-linear-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+      <!-- Imagen/Ilustración -->
+      <div class="flex justify-center">
+        <div class="relative">
+          <div class="w-80 h-80 rounded-2xl bg-linear-to-br from-blue-500/20 to-purple-500/20 dark:from-blue-500/10 dark:to-purple-500/10 flex items-center justify-center border border-gray-200 dark:border-gray-700">
+            <img src="assets/images/profile.png" alt="Profile" class="w-64 h-64 object-cover rounded-xl">
+          </div>
+          <!-- Decoración -->
+          <div class="absolute -top-4 -right-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl"></div>
+          <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl"></div>
+        </div>
+      </div>
+
+      <!-- Texto descriptivo -->
+      <div class="space-y-6">
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          {{ 'about.description' | translate }}
+        </p>
+        
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          {{ 'about.descriptionExtended' | translate }}
+        </p>
+
+        <!-- Botón CTA -->
+        <div class="flex gap-4 pt-4">
+          <a href="#contact" class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+            <span class="material-symbols-outlined">mail</span>
+            {{ 'about.contactMe' | translate }}
+          </a>
+          <a href="/projects" class="inline-flex items-center gap-2 border border-blue-600 text-blue-600 dark:text-blue-400 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white dark:hover:text-white transition-colors">
+            <span class="material-symbols-outlined">arrow_forward</span>
+            {{ 'about.viewProjects' | translate }}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats/Métricas -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+      <div class="text-center p-6 rounded-xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-gray-700">
+        <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">4+</div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">{{ 'about.yearsExperience' | translate }}</div>
+      </div>
+      
+      <div class="text-center p-6 rounded-xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-gray-700">
+        <div class="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">20+</div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">{{ 'about.projectsCompleted' | translate }}</div>
+      </div>
+      
+      <div class="text-center p-6 rounded-xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-gray-700">
+        <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">10+</div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">{{ 'about.technologies' | translate }}</div>
+      </div>
+      
+      <div class="text-center p-6 rounded-xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-gray-700">
+        <div class="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">100%</div>
+        <div class="text-sm text-gray-600 dark:text-gray-400">{{ 'about.dedication' | translate }}</div>
+      </div>
+    </div>
+
+    <!-- Áreas de especialización -->
+    <div class="mt-16">
+      <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        {{ 'about.specialization' | translate }}
+      </h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Frontend -->
+        <div class="p-6 rounded-xl bg-linear-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border border-blue-200 dark:border-blue-700">
+          <div class="w-12 h-12 bg-blue-600 dark:bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-white">code</span>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Frontend</h4>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+            {{ 'about.frontendDesc' | translate }}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs">Angular</span>
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs">TypeScript</span>
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs">Tailwind</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="p-6 rounded-xl bg-linear-to-br from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 border border-purple-200 dark:border-purple-700">
+          <div class="w-12 h-12 bg-purple-600 dark:bg-purple-500 rounded-lg flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-white">storage</span>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Backend</h4>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+            {{ 'about.backendDesc' | translate }}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs">PHP</span>
+            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs">C# .NET</span>
+            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs">MySQL</span>
+          </div>
+        </div>
+
+        <!-- Full Stack -->
+        <div class="p-6 rounded-xl bg-linear-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border border-blue-200 dark:border-purple-700">
+          <div class="w-12 h-12 bg-linear-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-white">layers</span>
+          </div>
+          <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Full Stack</h4>
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+            {{ 'about.fullstackDesc' | translate }}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs">Firebase</span>
+            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs">WordPress</span>
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs">Shopify</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

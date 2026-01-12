@@ -3,7 +3,8 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "contact": "Contact Me"
+    "contact": "Contact Me",
+    "skills": "Skills"
   },
   "footer": {
     "contact": "Contact",
@@ -30,7 +31,31 @@
   },
   "about": {
     "title": "About Me",
-    "description": "I am a <strong>full stack web developer</strong> with 4 years of experience in developing modern, functional, intuitive, and scalable applications.<br>I have solid experience in both frontend and backend, integrating databases, APIs, and developing attractive user interfaces.<br>I specialize in technologies such as <strong>Angular, Firebase, PHP, MySQL, C# with ASP.NET Core</strong>, and have also worked with CMS's like <strong>Wordpress and Shopify</strong>.<br>I am passionate about creating useful tools for both businesses and end users."
+    "description": "I am a <strong>full stack web developer</strong> with 4 years of experience in developing modern, functional, intuitive, and scalable applications.<br>I have solid experience in both frontend and backend, integrating databases, APIs, and developing attractive user interfaces.<br>I specialize in technologies such as <strong>Angular, NodeJS, Express, PHP, C# with ASP.NET Core, MySQL, MongoDB </strong>, and I have also worked with CMS's like <strong>Wordpress and Shopify</strong>.<br>I am passionate about creating useful tools for both businesses and end users.",
+    "yearsExperience": "Years of Experience",
+    "projectsCompleted": "Projects Completed",
+    "technologies": "Technologies",
+    "dedication": "Dedication",
+    "learnMore": "Learn More"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Want us to work together or have an idea in mind? Let's talk!",
+    "getInTouch": "Get in touch",
+    "availability": "Availability",
+    "availabilityText": "Currently available for freelance projects and job opportunities.",
+    "availableNow": "Available now",
+    "sendMessage": "Send message",
+    "name": "Name",
+    "namePlaceholder": "Your full name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "sendButton": "Send message",
+    "sending": "Sending...",
+    "successMessage": "Message sent successfully",
+    "errorMessage": "Error sending message"
   },
   "projects": {
     "title": "My Projects"
