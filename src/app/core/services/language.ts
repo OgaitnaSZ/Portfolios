@@ -11,17 +11,24 @@ export class Language {
   constructor(private translate: TranslateService) {
     // Configurar idioma inicial
     const savedLang = localStorage.getItem('lang');
-    const browserLang = this.translate.getBrowserLang();
-    const initialLang = savedLang || 
-      (browserLang?.match(/es|en/) ? browserLang : 'es');
+
+    const browserLang =
+      this.translate.getBrowserCultureLang()?.split('-')[0] ||
+      this.translate.getBrowserLang();
+
+    const initialLang =
+      savedLang && this.availableLanguages.includes(savedLang)
+        ? savedLang
+        : this.availableLanguages.includes(browserLang!)
+          ? browserLang!
+          : 'es';
     
     this.translate.setDefaultLang('es');
     this.setLanguage(initialLang);
 
     // Persistir cambios automáticamente
     effect(() => {
-      const lang = this.currentLang();
-      localStorage.setItem('lang', lang);
+      localStorage.setItem('lang', this.currentLang());
     });
   }
 
@@ -33,7 +40,6 @@ export class Language {
   }
 
   toggleLanguage() {
-    const newLang = this.currentLang() === 'es' ? 'en' : 'es';
-    this.setLanguage(newLang);
+    this.setLanguage(this.currentLang() === 'es' ? 'en' : 'es');
   }
 }
