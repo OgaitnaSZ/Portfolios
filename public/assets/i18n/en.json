@@ -58,7 +58,16 @@
     "errorMessage": "Error sending message"
   },
   "projects": {
-    "title": "My Projects"
+    "pageTitle": "My Projects",
+    "pageSubtitle": "A collection of projects I've worked on, showcasing my skills in full stack web development.",
+    "filterAll": "All",
+    "viewProject": "View project",
+    "viewDemo": "View demo",
+    "private": "Private",
+    "noProjects": "No projects found in this category",
+    "showing": "Showing",
+    "of": "of",
+    "projects": "projects"
   },
   "projectsList": [
     {
@@ -67,7 +76,8 @@
       "technologies": ["Angular", "TypeScript", "NodeJS", "Express", "MySQL"],
       "category": "App Web",
       "image": "assets/images/projects/proyecto-booking.png",
-      "note": "Uploaded on September 28, 2025" 
+      "note": "Uploaded on September 28, 2025",
+      "githubUrl": "https://github.com/OgaitnaSZ/App-Hospedajes"
     },
     {
       "title": "Medical Management Web Application",
@@ -75,7 +85,9 @@
       "technologies": ["Angular", "TypeScript", "NodeJS", "Express", "MongoDB"],
       "category": "App Web",
       "image": "assets/images/projects/sistema-medico.png",
-      "note": "Uploaded on September 28, 2025" 
+      "note": "Uploaded on September 28, 2025",
+      "demoUrl": "https://sistema-medico-pzn4.vercel.app",
+      "githubUrl": "https://github.com/OgaitnaSZ/SistemaMedico"
     },
     {
       "title": "KanbanApp – Task Organization and Management for Teams",
@@ -83,7 +95,8 @@
       "technologies": ["C#", "ASP.NET Core", "SQLite", "Entity Framework", "Razor Pages"],
       "category": "App Web",
       "image": "assets/images/projects/kanban-app.png",
-      "note": "Uploaded on September 28, 2025" 
+      "note": "Uploaded on September 28, 2025",
+      "githubUrl": "https://github.com/OgaitnaSZ/KanbanApp"
     },
     {
       "title": "Client Manager for Insurance Company",
@@ -99,7 +112,8 @@
       "technologies": ["Shopify", "JavaScript", "Liquid", "ShopifySQL"],
       "category": "Ecommerce",
       "image": "assets/images/projects/proyecto-ecommerce.png",
-      "note": "Uploaded on September 28, 2025"
+      "note": "Uploaded on September 28, 2025",
+      "demoUrl": "https://lilulukids.com/"
     },
     {
       "title": "Landing Page for Real Estate Portal",
@@ -107,7 +121,8 @@
       "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap"],
       "category": "Landing Page",
       "image": "assets/images/projects/landing_page_jhely.png",
-      "note": "Uploaded on September 28, 2025"
+      "note": "Uploaded on September 28, 2025",
+      "demoUrl": "https://lp.jhely.com/promocion/"
     }
   ]
 }

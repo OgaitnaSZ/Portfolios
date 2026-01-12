@@ -1,7 +1,8 @@
 import { Component, effect, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { RouterLink } from "@angular/router";
+import { RouterLink, ActivatedRoute } from "@angular/router";
+import { AfterViewInit } from '@angular/core';
 import { Contact } from "../contact/contact";
 
 @Component({
@@ -12,14 +13,35 @@ import { Contact } from "../contact/contact";
 })
 export class Home {
   projects = signal<any[]>([]);
-  cv_url = '';
+  cv_url = 'https://drive.google.com/file/d/1nA_QZn2zC0o-VzRrKNCufi1Dbvu7oQLJ/view';
 
-constructor(private translate: TranslateService) {
-  this.translate
-    .stream('projectsList')
-    .subscribe((projects) => {
-      this.projects.set(projects.slice(0, 6));
+  constructor(
+    private translate: TranslateService, 
+    private route: ActivatedRoute
+  ){
+    this.translate
+      .stream('projectsList')
+      .subscribe((projects) => {
+        this.projects.set(projects.slice(0, 6));
+      });
+  }
+
+  ngAfterViewInit(): void {
+    this.route.fragment.subscribe(fragment => {
+      if (!fragment) return;
+
+      setTimeout(() => {
+        const element = document.getElementById(fragment);
+        if (!element) return;
+
+        const yOffset = 100;
+        const y = element.getBoundingClientRect().top + window.scrollY - yOffset;
+
+        window.scrollTo({
+          top: y,
+          behavior: 'smooth'
+        });
+      });
     });
-}
-
+  }
 }

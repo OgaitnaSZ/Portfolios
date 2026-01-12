@@ -57,6 +57,18 @@
     "successMessage": "Mensaje enviado correctamente",
     "errorMessage": "Error al enviar el mensaje"
   },
+  "projects": {
+    "pageTitle": "Mis Proyectos",
+    "pageSubtitle": "Una colección de proyectos en los que he trabajado, mostrando mis habilidades en desarrollo web full stack.",
+    "filterAll": "Todos",
+    "viewProject": "Ver proyecto",
+    "viewDemo": "Ver demo",
+    "private": "Privado",
+    "noProjects": "No se encontraron proyectos en esta categoría",
+    "showing": "Mostrando",
+    "of": "de",
+    "projects": "proyectos"
+  },
   "projectsList": [
     {
       "title": "Plataforma de Reservas de Alojamientos",
@@ -64,7 +76,8 @@
       "technologies": ["Angular", "TypeScript", "NodeJS", "Express", "MySQL"],
       "category": "App Web",
       "image": "assets/images/projects/proyecto-booking.png",
-      "note": "Subido el 28 de septiembre de 2025"
+      "note": "Subido el 28 de septiembre de 2025",
+      "githubUrl": "https://github.com/OgaitnaSZ/App-Hospedajes"
     },
     {
       "title": "Aplicación Web de Gestión Médica",
@@ -72,7 +85,9 @@
       "technologies": ["Angular", "TypeScript", "NodeJS", "Express", "MongoDB"],
       "category": "App Web",
       "image": "assets/images/projects/sistema-medico.png",
-      "note": "Subido el 28 de septiembre de 2025"
+      "note": "Subido el 28 de septiembre de 2025",
+      "demoUrl": "https://sistema-medico-pzn4.vercel.app",
+      "githubUrl": "https://github.com/OgaitnaSZ/SistemaMedico"
     },
     {
       "title": "KanbanApp – Organización y Gestión de Tareas para Equipos",
@@ -80,7 +95,8 @@
       "technologies": ["C#", "ASP.NET Core", "SQLite", "Entity Framework", "Razor Pages"],
       "category": "App Web",
       "image": "assets/images/projects/kanban-app.png",
-      "note": "Subido el 28 de septiembre de 2025"
+      "note": "Subido el 28 de septiembre de 2025",
+      "githubUrl": "https://github.com/OgaitnaSZ/KanbanApp"
     },
     {
       "title": "Gestor de Clientes para Aseguradora",
@@ -96,7 +112,8 @@
       "technologies": ["Shopify", "JavaScript", "Liquid", "ShopifySQL"],
       "category": "Ecommerce",
       "image": "assets/images/projects/proyecto-ecommerce.png",
-      "note": "Subido el 28 de septiembre de 2025"
+      "note": "Subido el 28 de septiembre de 2025",
+      "demoUrl": "https://lilulukids.com/"
     },
     {
       "title": "Landing page para Portal Inmobiliario",
@@ -104,7 +121,8 @@
       "technologies": ["HTML", "Css", "JavaScript", "Tailwind CSS", "Google App Script"],
       "category": "Landing Page",
       "image": "assets/images/projects/landing_page_jhely.png",
-      "note": "Subido el 28 de septiembre de 2025"
+      "note": "Subido el 28 de septiembre de 2025",
+      "demoUrl": "https://lp.jhely.com/promocion/"
     }
   ]
 }

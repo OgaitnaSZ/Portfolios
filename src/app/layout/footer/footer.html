@@ -55,19 +55,19 @@
                     </h2>
                     <ul class="space-y-2 text-sm">
                         <li>
-                            <a routerLink="/about" 
+                            <a [routerLink]="['/']" fragment="about"
                                class="block md:inline ml-0 text-blue-600 dark:text-blue-400 hover:underline transition-colors">
                                 {{ 'nav.about' | translate }}
                             </a>
                         </li>
                         <li>
-                            <a routerLink="/projects" 
+                            <a [routerLink]="['/']" fragment="projects"
                                class="block md:inline ml-0 text-blue-600 dark:text-blue-400 hover:underline transition-colors">
                                 {{ 'nav.projects' | translate }}
                             </a>
                         </li>
                         <li>
-                            <a routerLink="/contact" 
+                            <a [routerLink]="['/']" fragment="contact"
                                class="block md:inline ml-0 text-blue-600 dark:text-blue-400 hover:underline transition-colors">
                                 {{ 'nav.contact' | translate }}
                             </a>

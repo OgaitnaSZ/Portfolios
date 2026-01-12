@@ -1,1 +1,181 @@
-<p>projects works!</p>
+<div class="min-h-screen bg-white dark:bg-slate-950 transition-colors pt-24 pb-20">
+  <div class="container mx-auto px-4">
+    <!-- Header de la página -->
+    <div class="text-center mb-16">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-4">
+        {{ 'projects.pageTitle' | translate }}
+      </h1>
+      <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-6">
+        {{ 'projects.pageSubtitle' | translate }}
+      </p>
+      <div class="w-20 h-1 bg-linear-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Filtros por categoría -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      <button
+        (click)="filterByCategory('all')"
+        [ngClass]="{
+          'bg-linear-to-r from-blue-600 to-purple-600 text-white': selectedCategory() === 'all',
+          'bg-gray-100 dark:bg-slate-900 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-800': selectedCategory() !== 'all'
+        }"
+        class="px-6 py-2 rounded-full font-medium transition-all border border-gray-200 dark:border-gray-700"
+      >
+        {{ 'projects.filterAll' | translate }}
+      </button>
+      <button
+        (click)="filterByCategory('Ecommerce')"
+        [ngClass]="{
+          'bg-linear-to-r from-blue-600 to-purple-600 text-white': selectedCategory() === 'Ecommerce',
+          'bg-gray-100 dark:bg-slate-900 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-800': selectedCategory() !== 'Ecommerce'
+        }"
+        class="px-6 py-2 rounded-full font-medium transition-all border border-gray-200 dark:border-gray-700"
+      >
+        Ecommerce
+      </button>
+      <button
+        (click)="filterByCategory('App Web')"
+        [ngClass]="{
+          'bg-linear-to-r from-blue-600 to-purple-600 text-white': selectedCategory() === 'Web App',
+          'bg-gray-100 dark:bg-slate-900 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-800': selectedCategory() !== 'App Web'
+        }"
+        class="px-6 py-2 rounded-full font-medium transition-all border border-gray-200 dark:border-gray-700"
+      >
+        Web App
+      </button>
+      <button
+        (click)="filterByCategory('Landing Page')"
+        [ngClass]="{
+          'bg-linear-to-r from-blue-600 to-purple-600 text-white': selectedCategory() === 'Landing Page',
+          'bg-gray-100 dark:bg-slate-900 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-800': selectedCategory() !== 'Landing Page'
+        }"
+        class="px-6 py-2 rounded-full font-medium transition-all border border-gray-200 dark:border-gray-700"
+      >
+        Landing Page
+      </button>
+    </div>
+
+    <!-- Grid de proyectos -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for (project of filteredProjects(); track project.title) {
+        <article class="group bg-gray-50 dark:bg-slate-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-blue-500 dark:hover:border-purple-500 transition-all duration-300 hover:shadow-xl">
+          <!-- Imagen del proyecto -->
+          <div class="relative overflow-hidden aspect-video bg-linear-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20">
+            @if (project.image) {
+              <img 
+                [src]="project.image" 
+                [alt]="project.title"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              >
+            } @else {
+              <div class="w-full h-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-6xl text-gray-400 dark:text-gray-600">image</span>
+              </div>
+            }
+            
+            <!-- Overlay con categoría -->
+            <div class="absolute top-4 right-4">
+              <span class="px-3 py-1 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full text-xs font-semibold text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700">
+                {{ project.category }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Contenido -->
+          <div class="p-6">
+            <!-- Título -->
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-purple-400 transition-colors">
+              {{ project.title }}
+            </h3>
+
+            <!-- Descripción -->
+            <div 
+              class="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-3"
+              [innerHTML]="project.description"
+            ></div>
+
+            <!-- Tecnologías -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              @for (tech of project.technologies; track tech) {
+                <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium">
+                  {{ tech }}
+                </span>
+              }
+            </div>
+
+            <!-- Nota/Fecha -->
+            @if (project.note) {
+              <p class="text-xs text-gray-500 dark:text-gray-500 mb-4 flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">schedule</span>
+                {{ project.note }}
+              </p>
+            }
+
+            <!-- Botones de acción -->
+            <div class="flex gap-2">
+              <!-- Botón Demo/Producción -->
+              @if (project.demoUrl && project.demoUrl !== '#') {
+                <a 
+                  [href]="project.demoUrl" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="flex-1 inline-flex items-center justify-center gap-2 bg-linear-to-r from-blue-600 to-purple-600 text-white px-4 py-2.5 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all text-sm font-medium shadow-md hover:shadow-lg"
+                >
+                  <span class="material-symbols-outlined text-lg">open_in_new</span>
+                  {{ 'projects.viewDemo' | translate }}
+                </a>
+              } @else {
+                <button 
+                  class="flex-1 inline-flex items-center justify-center gap-2 border border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-500 px-4 py-2.5 rounded-lg transition-all text-sm font-medium cursor-not-allowed opacity-60"
+                  disabled
+                >
+                  <span class="material-symbols-outlined text-lg">lock</span>
+                  {{ 'projects.private' | translate }}
+                </button>
+              }
+
+              <!-- Botón GitHub -->
+              @if (project.githubUrl && project.githubUrl !== '#') {
+                <a 
+                  [href]="project.githubUrl" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center justify-center gap-2 border-2 border-gray-700 dark:border-gray-300 text-gray-700 dark:text-gray-300 px-4 py-2.5 rounded-lg hover:bg-gray-700 hover:text-white dark:hover:bg-gray-300 dark:hover:text-gray-900 transition-all text-sm font-medium"
+                  title="Ver código en GitHub"
+                >
+                  <span class="material-symbols-outlined text-lg">code</span>
+                </a>
+              } @else {
+                <button 
+                  class="inline-flex items-center justify-center gap-2 border border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-500 px-4 py-2.5 rounded-lg transition-all text-sm font-medium cursor-not-allowed opacity-60"
+                  disabled
+                  title="Código privado"
+                >
+                  <span class="material-symbols-outlined text-lg">code_off</span>
+                </button>
+              }
+            </div>
+          </div>
+        </article>
+      } @empty {
+        <div class="col-span-full text-center py-20">
+          <span class="material-symbols-outlined text-6xl text-gray-400 dark:text-gray-600 mb-4">search_off</span>
+          <p class="text-xl text-gray-600 dark:text-gray-400">
+            {{ 'projects.noProjects' | translate }}
+          </p>
+        </div>
+      }
+    </div>
+
+    <!-- Contador de proyectos -->
+    <div class="text-center mt-12">
+      <p class="text-gray-600 dark:text-gray-400">
+        {{ 'projects.showing' | translate }} 
+        <span class="font-bold text-blue-600 dark:text-purple-400">{{ filteredProjects().length }}</span> 
+        {{ 'projects.of' | translate }} 
+        <span class="font-bold">{{ projects().length }}</span> 
+        {{ 'projects.projects' | translate }}
+      </p>
+    </div>
+  </div>
+</div>
