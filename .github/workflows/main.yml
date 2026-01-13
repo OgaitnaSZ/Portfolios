@@ -17,24 +17,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Checkout the repository
       - uses: actions/checkout@v4
 
+      # Setup Node.js environment
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
+      # Install dependencies
       - run: npm ci
 
+      # Build the Angular application
       - run: npm run build -- --configuration production
 
+      # Debug dist structure and ensure index.html exists
       - name: Debug dist and ensure index.html exists
         run: |
           ls -R dist || true
           test -f dist/portfolios-2026/browser/index.html
 
+      # Configure GitHub Pages
       - uses: actions/configure-pages@v4
 
+      # Upload the built application to GitHub Pages
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/portfolios-2026/browser
@@ -46,5 +53,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Deploy to GitHub Pages
       - id: deployment
         uses: actions/deploy-pages@v4
