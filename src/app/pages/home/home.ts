@@ -13,7 +13,7 @@ import { Contact } from "../contact/contact";
 })
 export class Home {
   projects = signal<any[]>([]);
-  cv_url = 'https://drive.google.com/file/d/1nA_QZn2zC0o-VzRrKNCufi1Dbvu7oQLJ/view';
+  cv_url = 'https://drive.google.com/file/d/1fzCCmoOhTm7OK5ifJZAymEbt-wOSyUbX/view';
 
   constructor(
     private translate: TranslateService, 
