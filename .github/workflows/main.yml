@@ -36,10 +36,13 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Show dist structure
+        run: ls -R dist
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: 'dist/portfolios-2026/browser'
+          path: 'dist/browser/portfolios-2026'
 
   deploy:
     environment:
