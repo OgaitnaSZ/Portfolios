@@ -31,24 +31,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build -- --configuration production --base-href /portfolios-2026/
-
-      - name: Debug - Check both possible paths
-        run: |
-          echo "=== Checking dist structure ==="
-          ls -laR dist/
-          echo ""
-          if [ -d "dist/portfolios-2026/browser" ]; then
-            echo "✓ Browser folder EXISTS"
-            echo "=== Contents of dist/portfolios-2026/browser/ ==="
-            ls -la dist/portfolios-2026/browser/
-            echo "BUILD_PATH=dist/portfolios-2026/browser" >> $GITHUB_ENV
-          else
-            echo "✗ Browser folder DOES NOT EXIST"
-            echo "=== Contents of dist/portfolios-2026/ ==="
-            ls -la dist/portfolios-2026/
-            echo "BUILD_PATH=dist/portfolios-2026" >> $GITHUB_ENV
-          fi
+        run: npm run build -- --configuration production
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -56,7 +39,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.BUILD_PATH }}
+          path: 'dist/portfolios-2026/browser'
 
   deploy:
     environment:
